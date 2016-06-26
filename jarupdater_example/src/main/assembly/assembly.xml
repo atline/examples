@@ -7,6 +7,18 @@
         <dependencySet>
             <useProjectArtifact>true</useProjectArtifact>
             <outputDirectory>lib</outputDirectory>
+            <excludes>
+                <exclude>org.atline.jarupdater:jarupdater</exclude>
+            </excludes>
+            <useTransitiveFiltering>true</useTransitiveFiltering>
+        </dependencySet>
+        <dependencySet>
+            <useProjectArtifact>false</useProjectArtifact>
+            <outputDirectory>updater</outputDirectory>
+            <includes>
+                <include>org.atline.jarupdater:jarupdater</include>
+            </includes>
+            <useTransitiveFiltering>true</useTransitiveFiltering>
         </dependencySet>
     </dependencySets>
     <fileSets>
@@ -27,7 +39,7 @@
         </fileSet>
         <fileSet>
             <directory>src/main/conf</directory>
-            <outputDirectory>/lib</outputDirectory>
+            <outputDirectory>/updater</outputDirectory>
             <includes>
                 <include>settings.conf</include>
             </includes>
